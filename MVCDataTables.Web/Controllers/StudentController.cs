@@ -13,7 +13,8 @@ namespace MVCDataTables.Web.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var students = _db.Students.ToList();
+            return View(students);
         }
     }
 }

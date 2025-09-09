@@ -1,1 +1,32 @@
-﻿<h1>Create</h1>
+﻿@model List<MVCDataTables.Domain.Entities.Student>;
+
+<h1>Students</h1>
+<a asp-controller="Student" asp-action="Create" class="btn btn-primary mb-3">Create Student</a>
+
+<table id="dt2" class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+			<th>Country</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Country</td>
+                <td>
+                    <a asp-controller="Student" asp-action="Edit" asp-route-id="@student.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-controller="Student" asp-action="Details" asp-route-id="@student.Id" class="btn btn-sm btn-info text-white">Details</a>
+					<a asp-controller="Student" asp-action="Delete" asp-route-id="@student.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MVCDataTables.Domain\MVCDataTables.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

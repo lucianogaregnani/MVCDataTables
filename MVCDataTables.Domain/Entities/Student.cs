@@ -10,9 +10,14 @@ namespace MVCDataTables.Domain.Entities
     public class Student
     {
         public int Id { get; set; }
-        [MinLength(3)]
-        public string? Name { get; set; }
+
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        public string Name { get; set; }
+
+        [Range(1, 120, ErrorMessage = "Edad inválida")]
         public int Age { get; set; }
-        public string? Country { get; set; }
+
+        [Required(ErrorMessage = "País obligatorio")]
+        public string Country { get; set; }
     }
 }
